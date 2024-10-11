@@ -9,4 +9,5 @@ public:
     static cv::Mat applySharpening(const cv::Mat& input);
     static cv::Mat resizeImage(const cv::Mat& input, double scale);
     static cv::Mat rotateImage(const cv::Mat& input, double angle);
+    static cv::Mat applyGaussianBlurSIMD(const cv::Mat& input, int kernelSize);
 };
