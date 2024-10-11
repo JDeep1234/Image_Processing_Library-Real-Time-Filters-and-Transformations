@@ -16,10 +16,12 @@ int main() {
     cv::Mat sharpened = ImageProcessor::applySharpening(image);
     cv::Mat resized = ImageProcessor::resizeImage(image, 0.5);
     cv::Mat rotated = ImageProcessor::rotateImage(image, 45);
+    cv::Mat simdBlurred = ImageProcessor::applyGaussianBlurSIMD(image, 3);
 
     // Show results
     cv::imshow("Original", image);
     cv::imshow("Blurred", blurred);
+    cv::imshow("SIMD Blurred", simdBlurred);
     cv::imshow("Edges", edges);
     cv::imshow("Sharpened", sharpened);
     cv::imshow("Resized", resized);
